@@ -11,7 +11,7 @@ This board is everything you need to build a high functioning CNC machine.
 The key features of the Devtronic CNC controller:
 
 * Support [grblHAL](https://github.com/grblHAL)
-* 5 Axis of step/direction motor control: 5V, external stepper driver requaired(closed-loop recommended)
+* 5 Axis of step/direction motor control: 5V, external stepper driver required(closed-loop recommended)
 * All inputs protected by transistor, NPN sensors should be used
 * Onboard 32KB FRAM to store setting
 * Input voltage up to 48V which allow to power CNC controller directly from power supply for NEMA23/24 stepper motors
