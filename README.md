@@ -72,7 +72,7 @@ If mechanical switch used as endstop it should connect input terminal to GND, no
 
 ## Configuration
 
-![Image](Media/Devtronic_Controller_2.png "Devtronic CNC Controller")
+![Image](Media/Devtronic_Controller_3.png "Devtronic CNC Controller")
 
 There three configuration blocks of jumpers.
 
