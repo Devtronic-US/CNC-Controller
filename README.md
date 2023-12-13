@@ -17,6 +17,13 @@ The key features of the Devtronic CNC controller:
 * Input voltage up to 48V which allow to power CNC controller directly from power supply for NEMA23/24 stepper motors
 * UART for control CNC machine with another controller
 
+[grblHAL Web Builder](http://svn.io-engineering.com:8080/)
+
+Configuration:
+
+* Driver: **STM32F4xx**
+* Board:  **BlackPill Alt. 2(STM32F411)**
+
 ## Dimensions
 
 **120** mm x **66** mm x **24** mm
