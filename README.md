@@ -5,6 +5,7 @@ Why one more controller needed? All controllers has connectors all over the PCB.
 ![Image](Media/Devtronic_Controller_1.png "Devtronic CNC Controller")
 
 This board is everything you need to build a high functioning CNC machine.
+
 **Where to buy:** https://www.etsy.com/shop/Devtronic
 
 The key features of the Devtronic CNC controller:
