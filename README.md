@@ -104,6 +104,6 @@ Most users don't need to touch this jumpers. If you plan to build and debug firm
 
 ## Schematic
 
-![Image](Media/GRBL_Contrller.png "Devtronic CNC Controller")
+![Image](Media/GRBL_Controller.png "Devtronic CNC Controller")
 ![Image](Media/GRBL_Contrller_Inputs.png "Devtronic CNC Controller")
-![Image](Media/GRBL_Contrller_Extension.png "Devtronic CNC Controller")
+![Image](Media/GRBL_Controller_Extension.png "Devtronic CNC Controller")
