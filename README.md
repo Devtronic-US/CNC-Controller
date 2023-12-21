@@ -65,7 +65,7 @@ All inputs protected using transistor.
 
 ![Image](Media/Input.png "Logic Level Shifter")
 
-When nothing or voltage higher than +3.3V applied to input, transistor is closed and doesn't allow high voltage from input pass trough to MCU pin. When ground level applied input, current start to flow trough transistor internal diode. It pulls MCU pin voltage to around +0.6V(voltage drop on diode), then because of voltage difference between source and gate, transistor opens completely which pulls voltage level MCU pin to practically ground level. More on that principle in [this article](https://www.digikey.com/en/blog/logic-level-shifting-basics).
+When nothing or voltage higher than +3.3V applied to input, transistor is closed and doesn't allow high voltage from input pass trough to MCU pin. When ground level applied to the input, current start to flow trough transistor internal diode. It pulls MCU pin voltage to around +0.6V(voltage drop on diode), then because of voltage difference between source and gate, transistor opens completely which pulls voltage level MCU pin to practically ground level. More on that principle in [this article](https://www.digikey.com/en/blog/logic-level-shifting-basics).
 
 Because of schematic, only **NPN sensors is recommended**. Sensors can have internal pull-up resistor.
 If mechanical switch used as endstop it should connect input terminal to GND, not to +V.
