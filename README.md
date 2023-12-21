@@ -22,7 +22,7 @@ The key features of the Devtronic CNC controller:
 Configuration:
 
 * Driver: **STM32F4xx**
-* Board:  **BlackPill Alt. 2(STM32F411)**
+* Board:  **Devtronic CNC Controller (BlackPill F411)**
 
 ## Dimensions
 
