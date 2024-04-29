@@ -2,27 +2,27 @@
 
 Why one more controller needed? All controllers has connectors all over the PCB. As result, to make accurate wiring it require a lot of space. If we look on stepper motor drivers, all of them has connectors only on one side which allow to stack them as "sandwich". Why not design CNC controller like that? It exactly what Devtronic CNC Controller is:
 
-![Image](Media/Devtronic_Controller_1.png "Devtronic CNC Controller")
+![Image](Media/Devtronic_Controller_1.png "Devtronic CNC Controller V2")
 
 This board is everything you need to build a high functioning CNC machine.
 
-**Where to buy:** https://www.etsy.com/shop/Devtronic
-
-The key features of the Devtronic CNC controller:
+## The key features of the Devtronic CNC controller:
 
 * Support [grblHAL](https://github.com/grblHAL)
 * 5 Axis of step/direction motor control: 5V, external stepper driver required(closed-loop recommended)
-* All inputs protected by transistor, NPN sensors should be used
+* Optocouplers used on all inputs
 * Onboard 32KB FRAM to store setting
 * Input voltage up to 48V which allow to power CNC controller directly from power supply for NEMA23/24 stepper motors
-* UART for control CNC machine with another controller
+* UART for control CNC machine with another controller(SmartPendant recommended)
 
 [grblHAL Web Builder](http://svn.io-engineering.com:8080/)
 
 Configuration:
 
 * Driver: **STM32F4xx**
-* Board:  **Devtronic CNC Controller (BlackPill F411)**
+* Board:  **Devtronic CNC Controller V2 (BlackPill F411)**
+
+**Note:** [Devtronic CNC Controller V1](CNC-Controller-V1/README.md) is obsolette. 
 
 ## Dimensions
 
@@ -61,11 +61,7 @@ Approx. 4-3/4" x 2-5/8" x 1"
 
 ## Inputs
 
-All inputs protected using transistor.
-
-![Image](Media/Input.png "Logic Level Shifter")
-
-When nothing or voltage higher than +3.3V applied to input, transistor is closed and doesn't allow high voltage from input pass trough to MCU pin. When ground level applied to the input, current start to flow trough transistor internal diode. It pulls MCU pin voltage to around +0.6V(voltage drop on diode), then because of voltage difference between source and gate, transistor opens completely which pulls voltage level MCU pin to practically ground level. More on that principle in [this article](https://www.digikey.com/en/blog/logic-level-shifting-basics).
+Optocouplers used on all inputs. Voltage used to light up LED inside optocouplers depends on output voltage configuration. If +12V is selected, optocouples will be connected to +12V and current trough LED will be about 20mA. In case of 5V current will be about 7 mA.
 
 Because of schematic, only **NPN sensors is recommended**. Sensors can have internal pull-up resistor.
 If mechanical switch used as endstop it should connect input terminal to GND, not to +V.
@@ -78,16 +74,17 @@ There three configuration blocks of jumpers.
 
 ### Power control
 
-This controller can be powered by three ways:
+This controller can be powered by two ways:
 
-1. USB: Only +5V available, spindle analog control(0-10V) will not work.
-2. +7-12V applied to PWR connector: Spindle analog control(0-10V) will work only if +12V applied.
-3. +12-48V applied to PWR connector: Input voltage reduced to +12V via DC-DC Step-Down converter.
+1. +7-12V applied to PWR connector: Spindle analog control(0-10V) will work only if +12V applied.
+2. +12-48V applied to PWR connector: Input voltage reduced to +12V via integrated DC-DC Step-Down converter.
+
+**Note:** when USB cable connected to controller, it powers BlackPill only, it is possible to communicate with controller from PC, but any functions requaired more than +3.3V will be unavailable.
 
 There two jumpers to control power:
 
-* **VIN**: input voltage selector, PWR for input voltage +7-12V and REG for input voltage +12-48V. When powered only from USB it recommends to remove this jumper. Default is REG.
-* **VOUT**: output voltage selector. Output voltage applied to all screw terminal marked as +V. It may be VIN voltage or +5V from linear regulator. UART connector always has +5V regardless of this jumper position. Default is +5V.
+* **VIN**: input voltage selector, two jumpers, should be switched as pair. PWR for input voltage +7-12V and REG for input voltage +12-48V. One jumper does actual selection, another jumper disconnects power from DC-DC converter in case if PWR used directly. Default is REG.
+* **VOUT**: output voltage selector. Output voltage applied to all screw terminal marked as +V and optocouplers. It may be +12V voltage or +5V from linear regulator. UART connector always has +5V regardless of this jumper position. Default is +5V.
 
 Note: default position when delivered to prevent damage in case of power up without checking settings. Those jumpers should be configured for particular build.
 
