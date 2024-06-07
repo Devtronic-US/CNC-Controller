@@ -8,7 +8,7 @@ This board is everything you need to build a high functioning CNC machine.
 
 **Store:** https://devtronic.square.site/
 
-## The key features of the Devtronic CNC controller:
+## The key features of the Devtronic CNC controller
 
 * Support [grblHAL](https://github.com/grblHAL)
 * 5 Axis of step/direction motor control: 5V, external stepper driver required(closed-loop recommended)
@@ -16,6 +16,10 @@ This board is everything you need to build a high functioning CNC machine.
 * Onboard 32KB FRAM to store setting
 * Input voltage up to 48V which allow to power CNC controller directly from power supply for NEMA23/24 stepper motors
 * UART for control CNC machine with another controller(SmartPendant recommended)
+
+**Note:** [Devtronic CNC Controller V1](CNC-Controller-V1/README.md) is obsolette. 
+
+## Firmware
 
 [grblHAL Web Builder](http://svn.io-engineering.com:8080/)
 
@@ -27,7 +31,13 @@ Configuration:
 * Plugins -> Settings EEPROM: **24x256(32k)**
 * Plugins -> EEPROM is FRAM:  **Should be set** 
 
-**Note:** [Devtronic CNC Controller V1](CNC-Controller-V1/README.md) is obsolette. 
+To load new firmware [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) is used.
+Connect CNC controller to PC using USB-C cable. Press and hold BOOT0 button, then short press NRST button.
+Open STM32CubeProgrammer. In top right corner choose "USB" from drop down list.
+If field "Port" in "USB Configuration" show "No DFU detected" click update button near it.
+Clock "Connect" button - STM32CubeProgrammer should establish connection and show current device memory content.
+Click "Open File" in left to corner, select firmware HEX file, then click "Download" button in top left corner.
+When flashing is done, close STM32CubeProgrammer and short press NRST button on the Controller to restart it. 
 
 ## Dimensions
 
