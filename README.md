@@ -32,10 +32,10 @@ Configuration:
 * Plugins -> EEPROM is FRAM:  **Should be set** 
 
 To load new firmware [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) is used.
-Connect CNC controller to PC using USB-C cable. Press and hold BOOT0 button, then short press NRST button.
+Connect CNC controller to PC using USB-C cable. Press and hold BOOT0 button, then short press NRST button, couple seconds later BOOT0 button can be released.
 Open STM32CubeProgrammer. In top right corner choose "USB" from drop down list.
 If field "Port" in "USB Configuration" show "No DFU detected" click update button near it.
-Clock "Connect" button - STM32CubeProgrammer should establish connection and show current device memory content.
+Click "Connect" button - STM32CubeProgrammer should establish connection and show current device memory content.
 Click "Open File" in left to corner, select firmware HEX file, then click "Download" button in top left corner.
 When flashing is done, close STM32CubeProgrammer and short press NRST button on the Controller to restart it. 
 
