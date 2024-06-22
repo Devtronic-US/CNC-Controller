@@ -39,6 +39,8 @@ Click "Connect" button - STM32CubeProgrammer should establish connection and sho
 Click "Open File" in left to corner, select firmware HEX file, then click "Download" button in top left corner.
 When flashing is done, close STM32CubeProgrammer and short press NRST button on the Controller to restart it. 
 
+**Note:** if flashing is successful, but firmware isn't work, check STM32CubeProgrammer log. If it says "sector 0000 does not exist" erasing operation wasn't successful and new firmware "merged"(write operation can only flip bits from 1 to 0) with old one. To fix this issue, press "eraser" button in bottom right corner and click "Ok" button in pop up window. After erasing is finished "Device memory" should show only FFFFFFFF. Flash new firmware after that. 
+
 ## Dimensions
 
 **120** mm x **66** mm x **24** mm
