@@ -27,7 +27,7 @@ Configuration:
 
 * Driver: **STM32F4xx**
 * Board:  **Devtronic CNC Controller V2 (BlackPill F411)**
-* Plugins -> MPG & DRO mode:  **Test 2**
+* Plugins -> MPG & DRO mode:  **Real time command switchover**
 * Plugins -> Settings EEPROM: **24x256(32k)**
 * Plugins -> EEPROM is FRAM:  **Should be set** 
 
